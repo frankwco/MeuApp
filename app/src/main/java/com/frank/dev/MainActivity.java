@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void chamarAddAtividade(View view) {
-        Intent itt = new Intent(this, NovaAtividadeMomento.class);
+        Intent itt = new Intent(this, Exemplos.class);
         startActivity(itt);
     }
 

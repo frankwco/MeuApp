@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -17,10 +18,17 @@ public class Exemplos extends AppCompatActivity {
         setContentView(R.layout.activity_exemplos);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("Exemplos","Estamos no on Start");
+    }
+
     public void resultadoSegundaTela(View view){
-        Intent intent = new Intent(this, TelaApresenteacao.class);
-        intent.putExtra("totalSoma",resultado());
-        startActivity(intent);
+        //Intent intent = new Intent(this, MainActivity.class);
+        //intent.putExtra("totalSoma",resultado());
+        //startActivity(intent);
+        finish();
     }
 
     private Double resultado(){
@@ -32,6 +40,8 @@ public class Exemplos extends AppCompatActivity {
         Double resultado = valor1 + valor2;
         return resultado;
     }
+
+
 
     public void somar(View view){
 

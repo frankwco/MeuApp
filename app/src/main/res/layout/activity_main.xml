@@ -221,7 +221,7 @@
                     android:layout_marginTop="20dp"
                     android:ellipsize="end"
                     android:maxLines="3"
-                    android:text="Agora ficou mais fácil registrar e recordar de momentos marcantes da sua vida..."
+                    android:text="Agora ficou mais fácil registrar e recordar momentos marcantes da sua vida..."
                     android:textSize="20sp"
                     app:layout_constraintTop_toBottomOf="@id/textTrading"/>
 
