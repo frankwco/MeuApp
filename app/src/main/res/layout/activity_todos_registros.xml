@@ -55,9 +55,10 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ListView
+        android:paddingTop="10dp"
         android:id="@+id/listViewRegistros"
-        android:layout_width="433dp"
-        android:layout_height="137dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="1dp"
@@ -68,15 +69,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layoutTopRegistros" />
 
-    <Button
-        android:id="@+id/button14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:onClick="chamarDetalhes"
-        android:text="detalhes - PROVISÓRIO"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listViewRegistros" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

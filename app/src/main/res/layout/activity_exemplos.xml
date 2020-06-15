@@ -50,11 +50,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textValor2" />
 
-    <Button
+
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
+        app:cornerRadius="20dp"
         android:onClick="resultadoSegundaTela"
         android:text="Voltar Tela Anterior"
         app:layout_constraintEnd_toEndOf="parent"

@@ -21,17 +21,17 @@ public class Exemplos extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.i("Exemplos","Estamos no on Start");
+        Log.i("Exemplos", "Estamos no on Start");
     }
 
-    public void resultadoSegundaTela(View view){
-        //Intent intent = new Intent(this, MainActivity.class);
+    public void resultadoSegundaTela(View view) {
+        Intent intent = new Intent(this, NovaAtividadeMomento.class);
         //intent.putExtra("totalSoma",resultado());
-        //startActivity(intent);
-        finish();
+        startActivity(intent);
+        //finish();
     }
 
-    private Double resultado(){
+    private Double resultado() {
         EditText campo1 = (EditText) findViewById(R.id.textValor1);
         EditText campo2 = (EditText) findViewById(R.id.textValor2);
 
@@ -42,15 +42,14 @@ public class Exemplos extends AppCompatActivity {
     }
 
 
-
-    public void somar(View view){
+    public void somar(View view) {
 
         Double resultado = resultado();
 
-        Toast.makeText(this, "Resultado da soma: "+resultado(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Resultado da soma: " + resultado(), Toast.LENGTH_LONG).show();
 
         TextView textView = (TextView) findViewById(R.id.textResultadoNovaTela2);
-        textView.setText("Total: "+resultado);
+        textView.setText("Total: " + resultado);
 
     }
 }
