@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.frank.dev.model.MemoriaAtividade;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class ListaMemoriasAdapter extends BaseAdapter {
@@ -43,6 +45,13 @@ public class ListaMemoriasAdapter extends BaseAdapter {
         MemoriaAtividade memoriaAtividade = memorias.get(position);
         TextView textView = viewLinha.findViewById(R.id.textTituloLinha);
         textView.setText(memoriaAtividade.getTitulo());
+
+        TextView textViewData = viewLinha.findViewById(R.id.textDataMemoria);
+
+        DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+
+        textViewData.setText(format.format(memoriaAtividade.getDataMemoria()));
+
         return viewLinha;
     }
 }

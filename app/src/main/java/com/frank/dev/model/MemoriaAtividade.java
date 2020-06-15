@@ -3,9 +3,11 @@ package com.frank.dev.model;
 
 import com.orm.SugarRecord;
 
+import java.util.Date;
+
 public class MemoriaAtividade extends SugarRecord {
 
-    public MemoriaAtividade(String titulo, String descricao, String imagem1, String imagem2, String imagem3, String latitude, String longitude) {
+    public MemoriaAtividade(String titulo, String descricao, String imagem1, String imagem2, String imagem3, String latitude, String longitude, Date dataMemoria) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.imagem1 = imagem1;
@@ -13,6 +15,7 @@ public class MemoriaAtividade extends SugarRecord {
         this.imagem3 = imagem3;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.dataMemoria = dataMemoria;
     }
 
     public MemoriaAtividade() {
@@ -26,6 +29,15 @@ public class MemoriaAtividade extends SugarRecord {
     private String imagem3;
     private String latitude;
     private String longitude;
+    private Date dataMemoria = new Date();
+
+    public Date getDataMemoria() {
+        return dataMemoria;
+    }
+
+    public void setDataMemoria(Date dataMemoria) {
+        this.dataMemoria = dataMemoria;
+    }
 
     public String getTitulo() {
         return titulo;
