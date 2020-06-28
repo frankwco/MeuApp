@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context=".NovoUsuario">
+    tools:context=".RecuperarSenha">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutNovaMemoria"
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginTop="15dp"
-            android:text="Cadastre-se"
+            android:text="Recuperar a Senha"
             android:textColor="@color/colorWhite"
             android:textSize="25sp"
             app:layout_constraintBottom_toTopOf="parent"
@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
-                        android:id="@+id/input_email"
+                        android:id="@+id/input_emaill"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
                         android:background="@null"
@@ -80,39 +80,7 @@
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/layoutDescricao2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="15dp"
-                android:background="@drawable/retangulo_branco"
-                android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@+id/layoutDescricao">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/input_layout_descricao"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:id="@+id/input_senha"
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:background="@null"
-                        android:hint="Senha"
-                        android:gravity="top|left"
-                        android:inputType="textPassword"
-                        android:lines="2" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
-            </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/layoutDescricao3"
@@ -123,33 +91,14 @@
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="15dp"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@+id/layoutDescricao2">
+                app:layout_constraintTop_toBottomOf="@+id/layoutDescricao">
                 <Button
-                    android:onClick="cadastrar"
+                    android:onClick="recuperar"
                     android:backgroundTint="@color/colorTredingStart"
                     android:id="@+id/button3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Cadastrar"
-                    />
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/layoutDescricao4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="15dp"
-                android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@+id/layoutDescricao3">
-                <Button
-                    android:onClick="voltarLogin"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:id="@+id/button4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Voltar para o Login"
+                    android:text="Recuperar"
                     />
             </RelativeLayout>
 

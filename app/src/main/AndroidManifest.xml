@@ -23,9 +23,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NovoUsuario"></activity>
-        <activity android:name=".Login" >
-
+        <activity android:name=".RecuperarSenha"></activity>
+        <activity android:name=".NovoUsuario" />
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -56,9 +56,7 @@
         <activity android:name=".NovaAtividadeMomento" />
         <activity android:name=".Exemplos" />
         <activity android:name=".TelaApresenteacao" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"

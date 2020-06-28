@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "79236508084",
+    "firebase_url": "https://meuapp-7580b.firebaseio.com",
+    "project_id": "meuapp-7580b",
+    "storage_bucket": "meuapp-7580b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79236508084:android:96d613e50c2dd2ea5b2ae1",
+        "android_client_info": {
+          "package_name": "com.frank.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79236508084-d2s54f17rrvjvbrrdsrkkou5oaqit3kh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.frank.dev",
+            "certificate_hash": "65ae55a97366dad664cef7252a2ff7472cccf0f6"
+          }
+        },
+        {
+          "client_id": "79236508084-g27hjchp2nugn0796p59mqvhsfoo2pnk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAygz6z4sAHcGcE62wf3BtVki56LUyl0Vc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "79236508084-g27hjchp2nugn0796p59mqvhsfoo2pnk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
