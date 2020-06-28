@@ -8,22 +8,48 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <uses-feature android:name="android.hardware.camera"
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="true" />
+
+    <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="49" />
+
     <application
+        android:name="com.orm.SugarApp"
         android:allowBackup="true"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name="com.orm.SugarApp">
+        android:theme="@style/AppTheme">
+        <activity android:name=".NovoUsuario"></activity>
+        <activity android:name=".Login" >
 
-        <meta-data android:name="DATABASE" android:value="bancoMemoria2.db" />
-        <meta-data android:name="VERSION" android:value="1" />
-        <meta-data android:name="QUERY_LOG" android:value="true" />
-        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.frank.dev" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <activity android:name=".TesteMaterial"></activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="" />
+        <meta-data
+            android:name="DATABASE"
+            android:value="bancoMemoria2.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.frank.dev" />
+
+        <activity android:name=".TesteMaterial" />
         <activity android:name=".DetalhesRegistro" />
         <activity android:name=".TodosRegistros" />
         <activity android:name=".LocalizacaoAutomatica" />
@@ -31,11 +57,7 @@
         <activity android:name=".Exemplos" />
         <activity android:name=".TelaApresenteacao" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <provider
@@ -45,7 +67,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/path"></meta-data>
+                android:resource="@xml/path" />
         </provider>
     </application>
 
