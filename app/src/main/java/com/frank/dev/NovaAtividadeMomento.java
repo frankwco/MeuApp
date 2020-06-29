@@ -35,6 +35,10 @@ import android.widget.Toast;
 import com.frank.dev.model.MemoriaAtividade;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -53,11 +57,13 @@ public class NovaAtividadeMomento extends AppCompatActivity {
     ImageView imageView1 ;
     ImageView imageView2 ;
     ImageView imageView3 ;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nova_atividade_momento);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
 
        imageView1 = (ImageView) findViewById(R.id.imageView2);
        imageView2 = (ImageView) findViewById(R.id.imageView3);
@@ -205,23 +211,23 @@ public class NovaAtividadeMomento extends AppCompatActivity {
                         bitmap.compress(Bitmap.CompressFormat.JPEG, 50, outputStream);
                         byte[] binario = outputStream.toByteArray();
                         String fotoString = Base64.encodeToString(binario, Base64.DEFAULT);
+
                         Log.i("NovaAtividadeMomento",""+fotoString.length());
 
                         if(foto==1) {
 
                             imageView1.setImageBitmap(bitmap);
                             imageView1.setBackground(null);
-                            memoriaAtividade.setImagem1(currentPhotoPath);
+                            memoriaAtividade.setImagem1(fotoString);
                         }else if(foto==2){
 
                             imageView2.setImageBitmap(bitmap);
                             imageView2.setBackground(null);
-                            memoriaAtividade.setImagem2(currentPhotoPath);
+                            memoriaAtividade.setImagem2(fotoString);
                         }else if(foto==2){
-
                             imageView3.setImageBitmap(bitmap);
                             imageView3.setBackground(null);
-                            memoriaAtividade.setImagem3(currentPhotoPath);
+                            memoriaAtividade.setImagem3(fotoString);
                         }
 
                     }catch (Exception i){
@@ -256,7 +262,12 @@ public class NovaAtividadeMomento extends AppCompatActivity {
         }
        // Toast.makeText(this, memoriaAtividade.getLatitude()+ " "+memoriaAtividade.getLongitude(), Toast.LENGTH_SHORT).show();
 
-        memoriaAtividade.save();
+        //memoriaAtividade.save();
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String chave = databaseReference.child(user.getUid()).child("memoria").push().getKey();
+        memoriaAtividade.setChave(chave);
+        databaseReference.child(user.getUid()).child("memoria").child(chave).setValue(memoriaAtividade);
 
         Toast.makeText(this, "A sua memória foi armazenada com sucesso!!", Toast.LENGTH_LONG).show();
         finish();

@@ -7,7 +7,8 @@ import java.util.Date;
 
 public class MemoriaAtividade extends SugarRecord {
 
-    public MemoriaAtividade(String titulo, String descricao, String imagem1, String imagem2, String imagem3, Double latitude, Double longitude, Date dataMemoria) {
+    public MemoriaAtividade(String chave, String titulo, String descricao, String imagem1, String imagem2, String imagem3, Double latitude, Double longitude, Date dataMemoria) {
+        this.chave = chave;
         this.titulo = titulo;
         this.descricao = descricao;
         this.imagem1 = imagem1;
@@ -21,7 +22,7 @@ public class MemoriaAtividade extends SugarRecord {
     public MemoriaAtividade() {
 
     }
-
+    private String chave;
     private String titulo;
     private String descricao;
     private String imagem1;
@@ -30,6 +31,14 @@ public class MemoriaAtividade extends SugarRecord {
     private Double latitude;
     private Double longitude;
     private Date dataMemoria = new Date();
+
+    public String getChave() {
+        return chave;
+    }
+
+    public void setChave(String chave) {
+        this.chave = chave;
+    }
 
     public Date getDataMemoria() {
         return dataMemoria;

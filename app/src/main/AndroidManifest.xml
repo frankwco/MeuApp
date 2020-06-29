@@ -38,7 +38,7 @@
             android:value="" />
         <meta-data
             android:name="DATABASE"
-            android:value="bancoMemoria2.db" />
+            android:value="bancoMemoria3.db" />
         <meta-data
             android:name="VERSION"
             android:value="1" />

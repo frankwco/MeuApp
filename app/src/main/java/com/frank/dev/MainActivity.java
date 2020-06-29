@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.frank.dev.model.MemoriaAtividade;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -21,6 +22,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
+
+        TextView textView=(TextView) findViewById(R.id.textTopNome);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+
+            String email = user.getEmail();
+            textView.setText(email);
+
+            String uid = user.getUid();
+        }
     }
 
     public void sair(View view){
